@@ -9,7 +9,7 @@ A maintainable UI automation framework for the TutorialsNinja OpenCart demo stor
 ## 1. Framework structure
 
 ```text
-capstone_project_selenium_ecommerce_framework/
+capstone_project/
 ├── config/
 │   └── config.ini
 ├── framework/
@@ -50,7 +50,7 @@ Selenium 4 uses Selenium Manager to resolve the browser driver in typical enviro
 ## 3. Installation (Windows PowerShell)
 
 ```powershell
-cd capstone_project_selenium_ecommerce_framework
+cd capstone_project
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
