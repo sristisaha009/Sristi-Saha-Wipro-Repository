@@ -5,12 +5,11 @@ A maintainable UI automation framework for the TutorialsNinja OpenCart demo stor
 **Application under test:** https://tutorialsninja.com/demo/  
 **Scope:** login validation (negative/invalid credentials) and product search.
 
-> This is a demo application. Use synthetic test data only. The included login tests deliberately validate rejected credentials; no real account or password is embedded.
 
 ## 1. Framework structure
 
 ```text
-selenium_ecommerce_framework/
+capstone_project_selenium_ecommerce_framework/
 ├── config/
 │   └── config.ini
 ├── framework/
@@ -42,7 +41,7 @@ selenium_ecommerce_framework/
 ## 2. Prerequisites
 
 - Python 3.10 or newer
-- Google Chrome (or Firefox if configured)
+- Google Chrome
 - Internet access to the demo site
 - A terminal such as PowerShell, Command Prompt, or bash
 
@@ -51,14 +50,12 @@ Selenium 4 uses Selenium Manager to resolve the browser driver in typical enviro
 ## 3. Installation (Windows PowerShell)
 
 ```powershell
-cd selenium_ecommerce_framework
+cd capstone_project_selenium_ecommerce_framework
 py -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
-
-On macOS/Linux, activate with `source .venv/bin/activate`.
 
 ## 4. Configuration
 
@@ -130,10 +127,3 @@ Search terms and login test data are maintained in `testdata/*.csv`. Update the 
 4. **No screenshot appears:** confirm the test actually failed after browser creation and that the `screenshots/` directory is writable.
 5. **HTML report is missing:** run the pytest command with `--html=reports/pytest-report.html --self-contained-html`.
 
-## 10. Professional submission checklist
-
-- Run the pytest suite and unittest suite separately.
-- Keep the generated report and relevant screenshots as execution evidence.
-- Record the actual browser, OS, Python and Selenium versions used in your submission.
-- Do not claim a test passed unless it was executed successfully in your environment.
-- If submitting to a repository, include this README and the framework source; exclude virtual environments and generated artifacts.
