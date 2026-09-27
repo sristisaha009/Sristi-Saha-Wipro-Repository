@@ -1,0 +1,25 @@
+[INFO]    Initialized logging in .\pabot_results
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 started.
+[DEBUG]   Storing .pabotsuitenames file
+[DEBUG]   2026-09-28 01:42:04.700263 [PID:18228] [0] [ID:0] EXECUTING Assignment6
+[DEBUG]   2026-09-28 01:42:09.728999 [PID:18228] [0] [ID:0] still running Assignment6 after 5.0s
+[DEBUG]   2026-09-28 01:42:19.773096 [PID:18228] [0] [ID:0] still running Assignment6 after 15.0s
+[DEBUG]   2026-09-28 01:42:34.848376 [PID:18228] [0] [ID:0] still running Assignment6 after 30.0s
+[DEBUG]   2026-09-28 01:42:55.223500 [PID:18228] [0] [ID:0] still running Assignment6 after 50.0s
+[INFO]    2026-09-28 01:43:07.106801 [PID:18228] [0] [ID:0] PASSED Assignment6 in 62.5 seconds
+[INFO]    4 tests, 4 passed, 0 failed, 0 skipped.
+[INFO]    ===================================================
+[INFO]    Output:  C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment6\output.xml
+[INFO]    Log:     
+[INFO]    C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment6\log.html
+[INFO]    
+[INFO]    Report:  
+[INFO]    C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment6\report.html
+[INFO]    
+[DEBUG]   Finalizing Pabot execution...
+[DEBUG]   Stopping PabotLib process
+[INFO]    Robot Framework remote server at 127.0.0.1:8270 stopped.
+[DEBUG]   PabotLib process stopped
+[INFO]    Total testing: 1 minute 2.50 seconds
+[INFO]    Elapsed time:  1 minute 3.79 seconds
+[DEBUG]   Logs flushed successfully.

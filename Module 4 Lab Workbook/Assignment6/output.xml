@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 7.5 (Python 3.12.4 on win32)" generated="2026-09-28T01:43:07.168935" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment6" source="C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment6\assignment6.robot">
+<test id="s1-t1" name="Verify Home Page" line="16">
+<kw name="Open Test Browser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:05.609271" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:05.609271" elapsed="6.474578"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:42:12.084855" elapsed="0.064035"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:42:05.608268" elapsed="6.540622"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:12.149845" level="INFO">Opening url 'https://the-internet.herokuapp.com'</msg>
+<arg>${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:12.149845" elapsed="0.500230"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:12.702966" level="INFO">Current page contains text 'Welcome to the-internet'.</msg>
+<arg>Welcome to the-internet</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-28T01:42:12.651622" elapsed="0.052352"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:42:17.704197" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:42:12.703974" elapsed="5.000223"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:42:17.704197" elapsed="2.302870"/>
+</kw>
+<tag>regression</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2026-09-28T01:42:05.607260" elapsed="14.400808"/>
+</test>
+<test id="s1-t2" name="Verify Login Page" line="22">
+<kw name="Open Test Browser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:20.010066" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:20.010066" elapsed="9.588661"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:42:29.598727" elapsed="0.051480"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:42:20.010066" elapsed="9.641658"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:29.651724" level="INFO">Opening url 'https://the-internet.herokuapp.com/login'</msg>
+<arg>${URL}/login</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:29.651724" elapsed="1.349901"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:31.029304" level="INFO">Current page contains element 'id=username'.</msg>
+<arg>id=username</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:42:31.002641" elapsed="0.026663"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:31.063358" level="INFO">Current page contains element 'id=password'.</msg>
+<arg>id=password</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:42:31.030326" elapsed="0.033032"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:42:36.065001" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:42:31.064373" elapsed="5.000628"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:42:36.067213" elapsed="2.459770"/>
+</kw>
+<tag>login</tag>
+<tag>smoke</tag>
+<status status="PASS" start="2026-09-28T01:42:20.009071" elapsed="18.517912"/>
+</test>
+<test id="s1-t3" name="Verify Checkboxes Page" line="29">
+<kw name="Open Test Browser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:38.531626" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:38.530052" elapsed="6.090409"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:42:44.621458" elapsed="0.080317"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:42:38.530052" elapsed="6.173271"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:44.704304" level="INFO">Opening url 'https://the-internet.herokuapp.com/checkboxes'</msg>
+<arg>${URL}/checkboxes</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:44.703323" elapsed="0.510594"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:45.255952" level="INFO">Current page contains element 'css=input[type='checkbox']'.</msg>
+<arg>css=input[type='checkbox']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:42:45.214936" elapsed="0.041016"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:42:50.258762" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:42:45.256953" elapsed="5.001809"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:42:50.259779" elapsed="2.358262"/>
+</kw>
+<tag>checkbox</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-28T01:42:38.529091" elapsed="14.088950"/>
+</test>
+<test id="s1-t4" name="Verify Dropdown Page" line="35">
+<kw name="Open Test Browser" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:52.621484" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:52.619973" elapsed="5.910190"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:42:58.530163" elapsed="0.105892"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:42:52.619973" elapsed="6.017097"/>
+</kw>
+<kw name="Go To" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:58.638180" level="INFO">Opening url 'https://the-internet.herokuapp.com/dropdown'</msg>
+<arg>${URL}/dropdown</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:42:58.637070" elapsed="0.641426"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:42:59.324663" level="INFO">Current page contains element 'id=dropdown'.</msg>
+<arg>id=dropdown</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:42:59.279497" elapsed="0.046167"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:43:04.327391" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:42:59.325664" elapsed="5.001727"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:43:04.327391" elapsed="2.401089"/>
+</kw>
+<tag>dropdown</tag>
+<tag>regression</tag>
+<status status="PASS" start="2026-09-28T01:42:52.618976" elapsed="14.109504"/>
+</test>
+<status status="PASS" start="2026-09-28T01:42:05.175000" elapsed="61.117000"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">checkbox</stat>
+<stat pass="1" fail="0" skip="0">dropdown</stat>
+<stat pass="1" fail="0" skip="0">login</stat>
+<stat pass="3" fail="0" skip="0">regression</stat>
+<stat pass="2" fail="0" skip="0">smoke</stat>
+</tag>
+<suite>
+<stat name="Assignment6" id="s1" pass="4" fail="0" skip="0">Assignment6</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

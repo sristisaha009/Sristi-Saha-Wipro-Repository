@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.4 on win32)" generated="2026-09-28T00:48:01.421697" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment2" source="C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment2\assignment2.robot">
+<test id="s1-t1" name="Data Driven Login Test" line="11">
+<kw name="Read Test Data" owner="CSVlibrary">
+<msg time="2026-09-28T00:48:01.817505" level="INFO">${test_data} = [['tomsmith', 'SuperSecretPassword!', 'success'], ['invaliduser', 'wrongpassword', 'failure'], ['tomsmith', 'wrongpassword', 'failure']]</msg>
+<var>${test_data}</var>
+<arg>${DATA_FILE}</arg>
+<doc>Read test cases from an external CSV file.</doc>
+<status status="PASS" start="2026-09-28T00:48:01.816421" elapsed="0.001084"/>
+</kw>
+<for flavor="IN">
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:01.818501" level="INFO">${username} = tomsmith</msg>
+<var>${username}</var>
+<arg>${row}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:01.818501" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:01.818501" level="INFO">${password} = SuperSecretPassword!</msg>
+<var>${password}</var>
+<arg>${row}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:01.818501" elapsed="0.001007"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:01.819508" level="INFO">${expected} = success</msg>
+<var>${expected}</var>
+<arg>${row}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:01.819508" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:01.819508" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:48:01.819508" elapsed="6.398137"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:48:08.219069" elapsed="0.050143"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:08.271207" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:08.269212" elapsed="0.291860"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:08.563640" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:08.562609" elapsed="0.253070"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:13.817556" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:08.815679" elapsed="5.001877"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:13.818572" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:13.817556" elapsed="0.881333"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:16.700936" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:14.699891" elapsed="2.001045"/>
+</kw>
+<if>
+<branch type="IF" condition="'${expected}' == 'success'">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:16.719875" level="INFO">Current page contains text 'You logged into a secure area!'.</msg>
+<arg>You logged into a secure area!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-28T00:48:16.701482" elapsed="0.018393"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:48:16.700936" elapsed="0.018939"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<var>${actual}</var>
+<arg>id=flash</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2026-09-28T00:48:16.720883" elapsed="0.000000"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>invalid</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="NOT RUN" start="2026-09-28T00:48:16.720883" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-09-28T00:48:16.719875" elapsed="0.001008"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:48:16.700936" elapsed="0.019947"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:21.721176" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:16.720883" elapsed="5.000293"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T00:48:21.721176" elapsed="2.204606"/>
+</kw>
+<var name="${row}">['tomsmith', 'SuperSecretPassword!', 'success']</var>
+<status status="PASS" start="2026-09-28T00:48:01.818501" elapsed="22.107281"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:23.926781" level="INFO">${username} = invaliduser</msg>
+<var>${username}</var>
+<arg>${row}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:23.926781" elapsed="0.000999"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:23.927780" level="INFO">${password} = wrongpassword</msg>
+<var>${password}</var>
+<arg>${row}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:23.927780" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:23.928781" level="INFO">${expected} = failure</msg>
+<var>${expected}</var>
+<arg>${row}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:23.927780" elapsed="0.001001"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:23.928781" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:48:23.928781" elapsed="6.206200"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:48:30.136003" elapsed="0.248183"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:30.385218" level="INFO">Typing text 'invaliduser' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:30.385218" elapsed="0.426501"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:30.813878" level="INFO">Typing text 'wrongpassword' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:30.812722" elapsed="0.167826"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:35.981870" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:30.981542" elapsed="5.000328"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:35.982885" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:35.981870" elapsed="0.972663"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:38.957059" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:36.955613" elapsed="2.001446"/>
+</kw>
+<if>
+<branch type="IF" condition="'${expected}' == 'success'">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>You logged into a secure area!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-09-28T00:48:38.957059" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-09-28T00:48:38.957059" elapsed="0.000000"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:38.983628" level="INFO">${actual} = Your username is invalid!
+×</msg>
+<var>${actual}</var>
+<arg>id=flash</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:38.957059" elapsed="0.027605"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>invalid</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-09-28T00:48:38.984664" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:48:38.957059" elapsed="0.028602"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:48:38.957059" elapsed="0.028602"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:43.986667" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:38.985661" elapsed="5.001526"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T00:48:43.987187" elapsed="2.269430"/>
+</kw>
+<var name="${row}">['invaliduser', 'wrongpassword', 'failure']</var>
+<status status="PASS" start="2026-09-28T00:48:23.926781" elapsed="22.329836"/>
+</iter>
+<iter>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:46.257721" level="INFO">${username} = tomsmith</msg>
+<var>${username}</var>
+<arg>${row}[0]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:46.257721" elapsed="0.000000"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:46.258737" level="INFO">${password} = wrongpassword</msg>
+<var>${password}</var>
+<arg>${row}[1]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:46.257721" elapsed="0.001016"/>
+</kw>
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2026-09-28T00:48:46.258737" level="INFO">${expected} = failure</msg>
+<var>${expected}</var>
+<arg>${row}[2]</arg>
+<doc>Returns the given values which can then be assigned to a variable.</doc>
+<status status="PASS" start="2026-09-28T00:48:46.258737" elapsed="0.000000"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:46.259736" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T00:48:46.259736" elapsed="5.615401"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T00:48:51.876167" elapsed="0.051792"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:51.928969" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>${username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:51.927959" elapsed="0.286976"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:52.215901" level="INFO">Typing text 'wrongpassword' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>${password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:52.214935" elapsed="0.209986"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:48:57.428347" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:52.426577" elapsed="5.001770"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:48:57.429363" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:48:57.428347" elapsed="0.891902"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:49:00.322881" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:48:58.321257" elapsed="2.001624"/>
+</kw>
+<if>
+<branch type="IF" condition="'${expected}' == 'success'">
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<arg>You logged into a secure area!</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="NOT RUN" start="2026-09-28T00:49:00.323891" elapsed="0.000000"/>
+</kw>
+<status status="NOT RUN" start="2026-09-28T00:49:00.322881" elapsed="0.001010"/>
+</branch>
+<branch type="ELSE">
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T00:49:00.363588" level="INFO">${actual} = Your password is invalid!
+×</msg>
+<var>${actual}</var>
+<arg>id=flash</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T00:49:00.323891" elapsed="0.039697"/>
+</kw>
+<kw name="Should Contain" owner="BuiltIn">
+<arg>${actual}</arg>
+<arg>invalid</arg>
+<doc>Fails if the `container` does not contain the `item` one or more times.</doc>
+<status status="PASS" start="2026-09-28T00:49:00.363588" elapsed="0.000000"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:49:00.323891" elapsed="0.039697"/>
+</branch>
+<status status="PASS" start="2026-09-28T00:49:00.322881" elapsed="0.041744"/>
+</if>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:49:05.364881" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:49:00.364625" elapsed="5.000256"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T00:49:05.364881" elapsed="2.467608"/>
+</kw>
+<var name="${row}">['tomsmith', 'wrongpassword', 'failure']</var>
+<status status="PASS" start="2026-09-28T00:48:46.257721" elapsed="21.574768"/>
+</iter>
+<var>${row}</var>
+<value>@{test_data}</value>
+<status status="PASS" start="2026-09-28T00:48:01.817505" elapsed="66.014984"/>
+</for>
+<status status="PASS" start="2026-09-28T00:48:01.816421" elapsed="66.017083"/>
+</test>
+<status status="PASS" start="2026-09-28T00:48:01.424216" elapsed="66.409288"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Assignment2" id="s1" pass="1" fail="0" skip="0">Assignment2</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

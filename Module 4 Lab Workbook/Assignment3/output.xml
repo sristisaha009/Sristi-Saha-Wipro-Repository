@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.4 on win32)" generated="2026-09-28T00:56:07.539414" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment3" source="C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment3\assignment3.robot">
+<test id="s1-t1" name="Custom Keyword And BuiltIn Operations" line="12">
+<kw name="Calculate Sum" owner="MathLibrary">
+<msg time="2026-09-28T00:56:07.588508" level="INFO">${result} = 60.0</msg>
+<var>${result}</var>
+<arg>${FIRST_NUMBER}</arg>
+<arg>${SECOND_NUMBER}</arg>
+<doc>Return the sum of two numbers.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.588508" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.589508" level="INFO">Argument types are:
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${result}</arg>
+<arg>60</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.589508" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.589508" level="INFO">${product} = 875</msg>
+<var>${product}</var>
+<arg>${FIRST_NUMBER} * ${SECOND_NUMBER}</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.589508" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Numbers" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.591170" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${product}</arg>
+<arg>875</arg>
+<doc>Fails if objects are unequal after converting them to real numbers.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.591170" elapsed="0.000000"/>
+</kw>
+<kw name="Evaluate" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.592321" level="INFO">${uppercase} = ROBOT FRAMEWORK AUTOMATION</msg>
+<var>${uppercase}</var>
+<arg>$TEXT.upper()</arg>
+<doc>Evaluates the given expression in Python and returns the result.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.591170" elapsed="0.001151"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${uppercase}</arg>
+<arg>ROBOT FRAMEWORK AUTOMATION</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.592321" elapsed="0.000000"/>
+</kw>
+<kw name="Get Length" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.593323" level="INFO">Length is 26.</msg>
+<msg time="2026-09-28T00:56:07.593323" level="INFO">${length} = 26</msg>
+<var>${length}</var>
+<arg>${TEXT}</arg>
+<doc>Returns and logs the length of the given item as an integer.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.593323" elapsed="0.000000"/>
+</kw>
+<kw name="Should Be Equal As Integers" owner="BuiltIn">
+<msg time="2026-09-28T00:56:07.594331" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<arg>${length}</arg>
+<arg>26</arg>
+<doc>Fails if objects are unequal after converting them to integers.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.594331" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Sum: ${result}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.595316" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Product: ${product}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.595316" elapsed="0.001302"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Uppercase: ${uppercase}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.596618" elapsed="0.000000"/>
+</kw>
+<kw name="Log To Console" owner="BuiltIn">
+<arg>Length: ${length}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.597638" elapsed="0.000000"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T00:56:12.598551" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T00:56:07.598146" elapsed="5.000405"/>
+</kw>
+<status status="PASS" start="2026-09-28T00:56:07.587505" elapsed="5.011046"/>
+</test>
+<status status="PASS" start="2026-09-28T00:56:07.541075" elapsed="5.057985"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Assignment3" id="s1" pass="1" fail="0" skip="0">Assignment3</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

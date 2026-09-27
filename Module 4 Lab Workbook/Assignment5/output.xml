@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.4 on win32)" generated="2026-09-28T01:31:36.310804" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment5" source="C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment5\assignment5.robot">
+<test id="s1-t1" name="Verify Secure Area" line="36">
+<kw name="Login Before Each Test" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:36.699330" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:31:36.699330" elapsed="15.098866"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:31:51.799188" elapsed="0.091792"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:51.892511" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>tomsmith</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:31:51.891496" elapsed="0.273977"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:52.166496" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>SuperSecretPassword!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:31:52.165473" elapsed="0.477096"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:52.655704" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:31:52.642569" elapsed="1.192092"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You logged into a secure area!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:31:53.834661" elapsed="0.027120"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:31:36.698357" elapsed="17.163424"/>
+</kw>
+<kw name="Page Should Contain" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:53.889241" level="INFO">Current page contains text 'Secure Area'.</msg>
+<arg>Secure Area</arg>
+<doc>Verifies that current page contains ``text``.</doc>
+<status status="PASS" start="2026-09-28T01:31:53.863657" elapsed="0.025584"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:31:58.890805" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:31:53.890246" elapsed="5.000559"/>
+</kw>
+<kw name="Logout And Close Browser" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:58.912682" level="INFO">Current page contains element 'css=a[href='/logout']'.</msg>
+<arg>css=a[href='/logout']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:31:58.892819" elapsed="0.019863"/>
+</kw>
+<msg time="2026-09-28T01:31:58.912682" level="INFO">${logout_visible} = True</msg>
+<var>${logout_visible}</var>
+<arg>Page Should Contain Element</arg>
+<arg>css=a[href='/logout']</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-28T01:31:58.892819" elapsed="0.019863"/>
+</kw>
+<if>
+<branch type="IF" condition="${logout_visible}">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:31:58.914198" level="INFO">Clicking link 'css=a[href='/logout']'.</msg>
+<arg>css=a[href='/logout']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:31:58.912682" elapsed="1.847196"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You logged out of the secure area!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:32:00.759878" elapsed="0.020520"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:32:05.781994" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:32:00.781396" elapsed="5.000598"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:31:58.912682" elapsed="6.869312"/>
+</branch>
+<status status="PASS" start="2026-09-28T01:31:58.912682" elapsed="6.869312"/>
+</if>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:32:05.783078" elapsed="2.255782"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:31:58.891819" elapsed="9.147041"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:31:36.697331" elapsed="31.341529"/>
+</test>
+<test id="s1-t2" name="Verify Logout Link" line="41">
+<kw name="Login Before Each Test" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:08.041045" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:32:08.041045" elapsed="6.039934"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:32:14.081988" elapsed="0.066670"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:14.150650" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>tomsmith</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:32:14.149653" elapsed="0.281806"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:14.433990" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>SuperSecretPassword!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:32:14.432462" elapsed="0.245713"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:14.679540" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:32:14.678175" elapsed="0.925750"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You logged into a secure area!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:32:15.604449" elapsed="0.027756"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:32:08.039883" elapsed="7.592322"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:15.652338" level="INFO">Current page contains element 'css=a[href='/logout']'.</msg>
+<arg>css=a[href='/logout']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:32:15.633962" elapsed="0.018376"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:32:20.653071" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:32:15.652338" elapsed="5.000733"/>
+</kw>
+<kw name="Logout And Close Browser" type="TEARDOWN">
+<kw name="Run Keyword And Return Status" owner="BuiltIn">
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:20.676971" level="INFO">Current page contains element 'css=a[href='/logout']'.</msg>
+<arg>css=a[href='/logout']</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:32:20.655898" elapsed="0.021073"/>
+</kw>
+<msg time="2026-09-28T01:32:20.677846" level="INFO">${logout_visible} = True</msg>
+<var>${logout_visible}</var>
+<arg>Page Should Contain Element</arg>
+<arg>css=a[href='/logout']</arg>
+<doc>Runs the specified keyword and returns the status as a Boolean value.</doc>
+<status status="PASS" start="2026-09-28T01:32:20.654898" elapsed="0.022948"/>
+</kw>
+<if>
+<branch type="IF" condition="${logout_visible}">
+<kw name="Click Link" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:32:20.678972" level="INFO">Clicking link 'css=a[href='/logout']'.</msg>
+<arg>css=a[href='/logout']</arg>
+<doc>Clicks a link identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:32:20.677846" elapsed="0.729663"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You logged out of the secure area!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:32:21.408485" elapsed="0.025584"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:32:26.436338" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:32:21.434069" elapsed="5.002269"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:32:20.677846" elapsed="5.758492"/>
+</branch>
+<status status="PASS" start="2026-09-28T01:32:20.677846" elapsed="5.758492"/>
+</if>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:32:26.437386" elapsed="2.247260"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:32:20.653741" elapsed="8.030905"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:32:08.039883" elapsed="20.645275"/>
+</test>
+<status status="PASS" start="2026-09-28T01:31:36.312787" elapsed="52.373391"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Assignment5" id="s1" pass="2" fail="0" skip="0">Assignment5</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

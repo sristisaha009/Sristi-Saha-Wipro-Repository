@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.5 (Python 3.12.4 on win32)" generated="2026-09-28T01:49:30.816189" rpa="false" schemaversion="5">
+<suite id="s1" name="Assignment7" source="C:\Users\Sristi\PycharmProjects\PythonProject\Selenium Lab Assignments\Module 4\Assignment7\assignment7.robot">
+<test id="s1-t1" name="Login Test With Detailed Logs" line="10">
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:31.450117" level="INFO">Test execution started.</msg>
+<arg>Test execution started.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:31.449075" elapsed="0.001042"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:31.452275" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:49:31.451181" elapsed="8.166000"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.617700" elapsed="0.056267"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:39.677970" level="INFO">Browser opened successfully.</msg>
+<arg>Browser opened successfully.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.675968" elapsed="0.002002"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:39.752080" level="INFO">Current page contains element 'id=username'.</msg>
+<arg>id=username</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.678964" elapsed="0.073116"/>
+</kw>
+<kw name="Page Should Contain Element" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:39.803549" level="INFO">Current page contains element 'id=password'.</msg>
+<arg>id=password</arg>
+<doc>Verifies that element ``locator`` is found on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.754097" elapsed="0.049452"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:39.806054" level="INFO">Login form elements verified.</msg>
+<arg>Login form elements verified.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.805042" elapsed="0.001012"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:39.807048" level="INFO">Typing text 'tomsmith' into text field 'id=username'.</msg>
+<arg>id=username</arg>
+<arg>tomsmith</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:49:39.807048" elapsed="0.292052"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:40.101646" level="INFO">Typing text 'SuperSecretPassword!' into text field 'id=password'.</msg>
+<arg>id=password</arg>
+<arg>SuperSecretPassword!</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:49:40.100620" elapsed="0.261623"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:40.365812" level="INFO">Username and password entered.</msg>
+<arg>Username and password entered.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:40.364784" elapsed="0.001028"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:49:45.368832" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:49:40.366821" elapsed="5.002642"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:45.371630" level="INFO">Clicking button 'css=button[type='submit']'.</msg>
+<arg>css=button[type='submit']</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-09-28T01:49:45.369463" elapsed="1.577306"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:46.948772" level="INFO">Login form submitted.</msg>
+<arg>Login form submitted.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:46.947767" elapsed="0.001005"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>You logged into a secure area!</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-09-28T01:49:46.950283" elapsed="0.026098"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:46.978379" level="INFO">Login successful.</msg>
+<arg>Login successful.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:46.977376" elapsed="0.001003"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:49:56.982492" level="INFO">Slept 10 seconds.</msg>
+<arg>10s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:49:46.979377" elapsed="10.004417"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:56.985827" level="INFO">Test completed successfully.</msg>
+<arg>Test completed successfully.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:56.984809" elapsed="0.001018"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:49:56.987805" elapsed="2.486512"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:49:59.476314" level="INFO">Browser closed.</msg>
+<arg>Browser closed.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:49:59.475317" elapsed="0.000997"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:49:31.448064" elapsed="28.031250"/>
+</test>
+<test id="s1-t2" name="Verify Page Title" line="47">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:49:59.485083" level="INFO">Opening browser 'Chrome' to base url 'https://the-internet.herokuapp.com/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-09-28T01:49:59.483556" elapsed="10.808017"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-09-28T01:50:10.293402" elapsed="0.079880"/>
+</kw>
+<kw name="Get Title" owner="SeleniumLibrary">
+<msg time="2026-09-28T01:50:10.411095" level="INFO">${title} = The Internet</msg>
+<var>${title}</var>
+<doc>Returns the title of the current page.</doc>
+<status status="PASS" start="2026-09-28T01:50:10.375985" elapsed="0.036118"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:50:10.417893" level="INFO">Current page title: The Internet</msg>
+<arg>Current page title: ${title}</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:50:10.414093" elapsed="0.003800"/>
+</kw>
+<kw name="Should Be Equal" owner="BuiltIn">
+<arg>${title}</arg>
+<arg>The Internet</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" start="2026-09-28T01:50:10.422041" elapsed="0.003571"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-09-28T01:50:15.430780" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses execution for the given time.</doc>
+<status status="PASS" start="2026-09-28T01:50:10.427642" elapsed="5.003138"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-09-28T01:50:15.433948" elapsed="2.443380"/>
+</kw>
+<kw name="Log" owner="BuiltIn">
+<msg time="2026-09-28T01:50:17.879223" level="INFO">Page title verification completed.</msg>
+<arg>Page title verification completed.</arg>
+<arg>INFO</arg>
+<doc>Logs the given message with the given level.</doc>
+<status status="PASS" start="2026-09-28T01:50:17.878219" elapsed="0.001004"/>
+</kw>
+<status status="PASS" start="2026-09-28T01:49:59.481556" elapsed="18.397667"/>
+</test>
+<status status="PASS" start="2026-09-28T01:49:30.818188" elapsed="47.063203"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Assignment7" id="s1" pass="2" fail="0" skip="0">Assignment7</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

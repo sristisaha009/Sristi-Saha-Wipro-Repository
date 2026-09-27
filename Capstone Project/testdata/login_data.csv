@@ -1,0 +1,3 @@
+email,password,scenario
+invalid@example.com,WrongPassword123,invalid_credentials
+not-an-email,SomePassword123,invalid_email_format
